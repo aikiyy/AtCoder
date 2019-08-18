@@ -43,3 +43,13 @@ class Heapq:
 
     def __len__(self):
         return len(self.hq)
+
+
+def euclidean(x, y):
+    '''
+    最大公約数を返す
+    '''
+    x, y = max(x, y), min(x, y)
+    while y != 0:
+        x, y = y, x%y
+    return x
