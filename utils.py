@@ -53,3 +53,12 @@ def euclidean(x, y):
     while y != 0:
         x, y = y, x%y
     return x
+
+
+from functools import reduce
+from math import gcd
+def greatest_common_divisor(iter):
+    '''
+    最大公約数を返す
+    '''
+    return reduce(gcd, iter)
