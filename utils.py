@@ -1,4 +1,6 @@
 import heapq
+from functools import reduce
+from math import gcd
 
 
 class Reverse:
@@ -55,10 +57,16 @@ def euclidean(x, y):
     return x
 
 
-from functools import reduce
-from math import gcd
 def greatest_common_divisor(iter):
     '''
     最大公約数を返す
     '''
     return reduce(gcd, iter)
+
+
+def least_common_multiple(iter):
+    '''
+    最小公倍数を返す
+    '''
+    lcm = lambda x, y: x*y//gcd(x, y)
+    return reduce(lcm, iter)
