@@ -12,3 +12,5 @@ AtCoder:https://atcoder.jp/users/aikiyy
 ## Algorithms
 - しゃくとり
   - ABC032 C
+- つるかめ算
+  - ABC006 C
