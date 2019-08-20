@@ -14,3 +14,5 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC032 C
 - つるかめ算
   - ABC006 C
+- いもす法
+  - ABC017 C
