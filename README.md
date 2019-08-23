@@ -16,3 +16,5 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC006 C
 - いもす法
   - ABC017 C
+- 二分探索
+  - ABC030 C
