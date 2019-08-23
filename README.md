@@ -18,3 +18,5 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC017 C
 - 二分探索
   - ABC030 C
+- フェルマーの小定理
+  - ABC034 C
