@@ -1,8 +1,12 @@
-n, m = map(int, input().split())
-if 2*n <= m <= 4*n:
-    y = m%2
-    z = ((m-3*y) - 2*(n-y)) // 2
-    x = n-y-z
-    print(x, y, z)
-else:
-    print('-1 -1 -1')
+n = int(input())
+A = list(map(int, input().split()))
+# TLE
+# l = []
+# for i, a in enumerate(A):
+#     if i%2 == 0:
+#         l.append(a)
+#     else:
+#         l.insert(0, a)
+# print(' '.join(map(str, l)))
+
+print(' '.join(map(str, A[::-2])), ' '.join(map(str, A[n%2::2])))
