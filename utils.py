@@ -84,3 +84,17 @@ def make_divisors(n):
                 divisors.append(n//i)
     # divisors.sort()
     return divisors
+
+
+def trial_division(n):
+    '''
+    素因数分解する
+    '''
+    factor = []
+    for num in range(2, int(n**0.5)+1):
+        while n % num == 0:
+            n //= num
+            factor.append(num)
+    if not factor or n != 1:
+        factor.append(n)
+    return factor
