@@ -23,3 +23,11 @@ AtCoder:https://atcoder.jp/users/aikiyy
   
 ## Way of Thinking
 - ABC117 C
+
+## Modules
+| Module | Content |
+|--|--|
+| itertools.permutations | 順列 |
+| itertools.combinations | 組み合わせ |
+| itertools.combinations_with_replacement | 重複組み合わせ |
+| itertools.product | 直積 |
