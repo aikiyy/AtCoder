@@ -31,3 +31,4 @@ AtCoder:https://atcoder.jp/users/aikiyy
 | itertools.combinations | 組み合わせ |
 | itertools.combinations_with_replacement | 重複組み合わせ |
 | itertools.product | 直積 |
+| collections.Counter | |
