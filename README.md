@@ -32,5 +32,5 @@ AtCoder:https://atcoder.jp/users/aikiyy
 | itertools.permutations | 順列 |
 | itertools.combinations | 組み合わせ |
 | itertools.combinations_with_replacement | 重複組み合わせ |
-| itertools.product | 直積 |
+| itertools.product | 直積(入力イテラブルのデカルト積) |
 | collections.Counter | |
