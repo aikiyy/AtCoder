@@ -20,6 +20,8 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC030 C
 - フェルマーの小定理
   - ABC034 C
+- 最小公倍数
+  - ABC118 C
   
 ## Way of Thinking
 - ABC117 C
