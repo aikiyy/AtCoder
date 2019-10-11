@@ -24,6 +24,8 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC034 C
 - 最小公倍数
   - ABC118 C
+- 深さ優先探索(DFS)
+  - ATC001 A
   
 ## Way of Thinking
 - ABC117 C
@@ -36,3 +38,10 @@ AtCoder:https://atcoder.jp/users/aikiyy
 | itertools.combinations_with_replacement | 重複組み合わせ |
 | itertools.product | 直積(入力イテラブルのデカルト積) |
 | collections.Counter | |
+
+## Extra
+再起回数の上限はデフォルトで1000。DFSでは以下を設定する必要あり。
+```
+import sys
+sys.setrecursionlimit(適当に大きい数) 
+```
