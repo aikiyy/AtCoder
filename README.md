@@ -33,6 +33,8 @@ AtCoder:https://atcoder.jp/users/aikiyy
 - DP
   - ナップザック問題
     - ABC015 D
+  - 最長増加部分列(LIS)
+    - ABC006 D
   
 ## Way of Thinking
 - ABC117 C
