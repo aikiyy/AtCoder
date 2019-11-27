@@ -8,6 +8,8 @@ AtCoder:https://atcoder.jp/users/aikiyy
 ## DataStructure
 - 無向グラフ構造の中での島の数・橋の数を出す
   - ABC075 C
+- bit全探索
+  - ABC002 D
   
 ## Algorithms
 - しゃくとり
@@ -22,6 +24,17 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC034 C
 - 最小公倍数
   - ABC118 C
+- 深さ優先探索(DFS)
+  - ATC001 A
+- 幅優先探索(BFS)
+  - ABC088 D
+- 区間スケジューリング
+  - ABC103 D
+- DP
+  - ナップザック問題
+    - ABC015 D
+  - 最長増加部分列(LIS)
+    - ABC006 D
   
 ## Way of Thinking
 - ABC117 C
@@ -34,3 +47,10 @@ AtCoder:https://atcoder.jp/users/aikiyy
 | itertools.combinations_with_replacement | 重複組み合わせ |
 | itertools.product | 直積(入力イテラブルのデカルト積) |
 | collections.Counter | |
+
+## Extra
+再起回数の上限はデフォルトで1000。DFSでは以下を設定する必要あり。
+```
+import sys
+sys.setrecursionlimit(適当に大きい数) 
+```
