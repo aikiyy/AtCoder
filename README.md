@@ -10,6 +10,8 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC075 C
 - bit全探索
   - ABC002 D
+- 優先度付きキュー
+  - ctf2017 C
   
 ## Algorithms
 - しゃくとり
