@@ -154,3 +154,17 @@ class UnionFind:
 
     def same(self, x, y):
         return self.find(x) == self.find(y)
+
+
+'''
+ツリー探索
+'''
+N = 1000
+root = 0
+G = [[] for _ in range(N)]
+def dfs(v, p):
+    for nv in G[v]:
+        if nv == p:
+            continue
+        dfs(nv, v)
+dfs(root, -1)
