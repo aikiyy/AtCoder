@@ -168,3 +168,22 @@ def dfs(v, p):
             continue
         dfs(nv, v)
 dfs(root, -1)
+
+
+'''
+二部グラフ判定
+'''
+colors = []
+edges = []
+# 頂点vをcolor(1 or -1)で塗り、矛盾がないか調べる
+# dfs(0, 1)がTrueなら二部グラフ
+def dfs(v, color):
+    colors[v] = color
+    for to in edges[v]:
+        # 同じ色が隣接するならFalse
+        if colors[to] == color:
+            return False
+        # 未着手の頂点は反転した色を指定
+        if colors[to] == 0 and not dfs(to, -color):
+            return False
+    return True
