@@ -1,5 +1,6 @@
 N, M = map(int, input().split())
 S = input()
+S = list(reversed(S))
 
 # 現在位置
 now = 0
@@ -15,16 +16,4 @@ while now <= N-1:
         print(-1)
         exit()
     _now = now
-
-# 辞書順最小化を目指す
-ans = sorted(ans)
-new_ans = []
-now = 0
-while len(ans) > 0:
-    for a in ans:
-        if S[now+a] == '0':
-            new_ans.append(a)
-            ans.remove(a)
-            now += a
-            break
-print(*new_ans)
+print(*reversed(ans))
