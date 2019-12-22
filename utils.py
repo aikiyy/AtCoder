@@ -187,3 +187,30 @@ def dfs(v, color):
         if colors[to] == 0 and not dfs(to, -color):
             return False
     return True
+
+
+'''
+ダイクストラ法
+'''
+def dijkstra(n, s, adj_list):
+    # 始点sから各頂点への最短距離
+    # n: 頂点数, adj_list:各頂点が(先のノード, cost)を持ったリスト
+    from heapq import heappush, heappop
+
+    dists = [float('inf')] * n
+    dists[s] = 0
+    heap, rem = [(0, s)], n - 1
+
+    while heap and rem:
+        cost, src = heappop(heap)
+        if dists[src] < cost:
+            continue
+        rem -= 1
+
+        for dest, _cost in adj_list[src]:
+            newcost = cost + _cost
+            if dists[dest] > newcost:
+                dists[dest] = newcost
+                heappush(heap, (newcost, dest))
+
+    return dists
