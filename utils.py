@@ -214,3 +214,27 @@ def dijkstra(n, s, adj_list):
                 heappush(heap, (newcost, dest))
 
     return dists
+
+
+'''
+最小全域木(prim法)
+'''
+def prim(n, s, edges):
+    # n:頂点数, s:スタートノード
+    # edges: edgeリスト(cost, 行き先ノード)
+    used = [False] * n
+    edgelist = []
+    for e in edges[s]:
+        heapq.heappush(edgelist, e)
+    used[s] = True
+    res = 0
+    while len(edgelist) != 0:
+        minedge = heapq.heappop(edgelist)
+        if used[minedge[1]]:
+            continue
+        used[minedge[1]] = True
+        for e in edges[minedge[1]]:
+            if not used[e[1]]:
+                heapq.heappush(edgelist, e)
+        res += minedge[0]
+    return res
