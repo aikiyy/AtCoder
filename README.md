@@ -39,8 +39,11 @@ AtCoder:https://atcoder.jp/users/aikiyy
     - ABC015 D
   - 最長増加部分列(LIS)
     - ABC006 D
-- ダイクストラ法
-  - joi2008 f
+- グラフ問題
+  - ダイクストラ法
+    - joi2008 F
+  - 最小全域木(prim法)
+    - ABC065 D
 
 ## Way of Thinking
 - ABC117 C
