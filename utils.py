@@ -1,6 +1,6 @@
 import heapq
 from functools import reduce
-from math import gcd
+from fractions import gcd
 
 
 class Reverse:
