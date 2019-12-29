@@ -12,6 +12,8 @@ AtCoder:https://atcoder.jp/users/aikiyy
   - ABC002 D
 - 優先度付きキュー
   - ctf2017 C
+- ツリー探索
+  - ABC126 D
   
 ## Algorithms
 - しゃくとり
@@ -37,7 +39,12 @@ AtCoder:https://atcoder.jp/users/aikiyy
     - ABC015 D
   - 最長増加部分列(LIS)
     - ABC006 D
-  
+- グラフ問題
+  - ダイクストラ法
+    - joi2008 F
+  - 最小全域木(prim法)
+    - ABC065 D
+
 ## Way of Thinking
 - ABC117 C
 

@@ -1,6 +1,6 @@
 import heapq
 from functools import reduce
-from math import gcd
+from fractions import gcd
 
 
 class Reverse:
@@ -154,3 +154,127 @@ class UnionFind:
 
     def same(self, x, y):
         return self.find(x) == self.find(y)
+
+
+'''
+ツリー探索
+'''
+N = 1000
+root = 0
+G = [[] for _ in range(N)]
+def dfs(v, p):
+    for nv in G[v]:
+        if nv == p:
+            continue
+        dfs(nv, v)
+dfs(root, -1)
+
+
+'''
+二部グラフ判定
+'''
+colors = []
+edges = []
+# 頂点vをcolor(1 or -1)で塗り、矛盾がないか調べる
+# dfs(0, 1)がTrueなら二部グラフ
+def dfs(v, color):
+    colors[v] = color
+    for to in edges[v]:
+        # 同じ色が隣接するならFalse
+        if colors[to] == color:
+            return False
+        # 未着手の頂点は反転した色を指定
+        if colors[to] == 0 and not dfs(to, -color):
+            return False
+    return True
+
+
+'''
+ダイクストラ法
+'''
+def dijkstra(n, s, adj_list):
+    # 始点sから各頂点への最短距離
+    # n: 頂点数, adj_list:各頂点が(先のノード, cost)を持ったリスト
+    from heapq import heappush, heappop
+
+    dists = [float('inf')] * n
+    dists[s] = 0
+    heap, rem = [(0, s)], n - 1
+
+    while heap and rem:
+        cost, src = heappop(heap)
+        if dists[src] < cost:
+            continue
+        rem -= 1
+
+        for dest, _cost in adj_list[src]:
+            newcost = cost + _cost
+            if dists[dest] > newcost:
+                dists[dest] = newcost
+                heappush(heap, (newcost, dest))
+
+    return dists
+
+
+'''
+最小全域木(prim法)
+'''
+def prim(n, s, edges):
+    # n:頂点数, s:スタートノード
+    # edges: edgeリスト(cost, 行き先ノード)
+    used = [False] * n
+    edgelist = []
+    for e in edges[s]:
+        heapq.heappush(edgelist, e)
+    used[s] = True
+    res = 0
+    while len(edgelist) != 0:
+        minedge = heapq.heappop(edgelist)
+        if used[minedge[1]]:
+            continue
+        used[minedge[1]] = True
+        for e in edges[minedge[1]]:
+            if not used[e[1]]:
+                heapq.heappush(edgelist, e)
+        res += minedge[0]
+    return res
+
+
+'''
+牛ゲー
+最短経路問題
+'''
+def bellman_ford(edges, n, src):
+    # n:ノード数, src:スタートノード
+    # edges:edge(src, tgt, cost)のリスト
+    inf = float('inf')
+    dist = [inf for _ in range(n)]
+    dist[src] = 0
+    # 移動経路
+    pre = {}
+
+    # 最短経路算出
+    for i in range(n-1):
+        for edge in edges:
+            # srcにコストがあり、tgtのコストよりも低いコストで更新できそうなら
+            if dist[edge[0]] != inf and dist[edge[1]] > dist[edge[0]] + edge[2]:
+                dist[edge[1]] = dist[edge[0]] + edge[2]
+                pre[edge[1]] = edge[0]
+
+    # 負の閉路検出
+    def checkpath(pre, n, src):
+        if src in pre and pre[n-1] == src and pre[src] == n-1:
+            return True
+        count = 0
+        p = pre[n-1]
+        while p != src:
+            p = pre[p]
+            if p == src and src in pre:
+                return True
+            count += 1
+            if count >= n-1:
+                return True
+        return False
+
+    is_cycle = checkpath(pre, n, src)
+    return (dist, is_cycle)
